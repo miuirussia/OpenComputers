@@ -25,8 +25,6 @@ PNGImage.rev = 1
 local DeflateLua = require("deflatelua")
 local CRC32Lua = require("crc32lua")
 
-local bit = require("bit32")
-
 local PNGImagemetatable = {}
 PNGImagemetatable.__index = PNGImage
 
@@ -46,8 +44,8 @@ PNGImage.ColourTypes = {
 
 
 
-local band = bit.band
-local rshift = bit.rshift
+local band = bit32.band
+local rshift = bit32.rshift
 
 
 
