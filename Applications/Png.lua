@@ -20,7 +20,6 @@ local term = require("term")
 local fs = require("filesystem")
 local shell = require("shell")
 local component = require("component")
-local bit = require("bit32")
 local PNGImage = require("libPNGimage")
 
 
@@ -106,7 +105,7 @@ local function drawPngImage(x, y)
 			local r, g, b, a = pngi:getPixel(i, j)
 			
 			if a > 0 then
-				gpu.setForeground(bit.bor(bit.lshift(r, 16), bit.bor(bit.lshift(g, 8), b)), false)
+				gpu.setForeground(bit32.bor(bit32.lshift(r, 16), bit32.bor(bit32.lshift(g, 8), b)), false)
 				--gpu.set(x+1, y+1, block)
 				gpu.fill(x + i * 2, y + j, 2, 1, block)
 				--print(x, y, r, g, b, a, bit.bor(bit.lshift(r, 16), bit.bor(bit.lshift(g, 8), b)))
